@@ -1,0 +1,649 @@
+/* Declare root theme color palette and typography variables */
+:root {
+  --color-bg: #0f172a;
+  --color-card: #1e293b;
+  --color-card-muted: rgba(30, 41, 59, 0.5);
+  --color-primary: #f8fafc;
+  --color-dark: #f8fafc;
+  --color-text: #94a3b8;
+  --color-light: #0f172a;
+  --color-border: #334155;
+  --color-accent: #38bdf8;
+  --color-accent-hover: #7dd3fc;
+  --color-error: #f87171;
+  --color-success: #4ade80;
+  --color-white: #ffffff;
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Reset default element spacing and set base stylesheet rules */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Configure core page background, text colors, and body typography */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+/* Define typography heading styles and section header rules */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+/* Establish container width constraint and automatic horizontal margin */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Utility class for centering text alignment */
+.text-center {
+  text-align: center;
+}
+
+/* Define common section padding and layout borders */
+section {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Style main section titles with bottom spacing */
+.section-title {
+  font-size: 2.25rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  position: relative;
+  color: var(--color-primary);
+}
+
+/* Style fixed navigation header bar and background blur */
+.navbar-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Configure navigation bar flexbox distribution */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+}
+
+/* Style brand logo text link */
+.nav-brand {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Add hover transition state to brand logo text */
+.nav-brand:hover {
+  color: var(--color-accent);
+}
+
+/* Style mobile hamburger menu toggle button */
+.nav-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Configure mobile responsive navigation menu layout */
+.nav-menu {
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 0;
+}
+
+/* Toggle navigation menu visibility state */
+.nav-menu.active {
+  display: block;
+}
+
+/* Style navigation item anchor links and spacing */
+.nav-link {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Add hover state transitions to navigation menu items */
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-accent);
+  background-color: rgba(56, 189, 248, 0.1);
+}
+
+/* Style hero banner section centering and padding */
+.hero-section {
+  padding: 7rem 0 6rem;
+  background-color: var(--color-bg);
+  background-image: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 65%);
+  text-align: center;
+}
+
+/* Style hero section main developer name heading */
+.hero-name {
+  font-size: 2.75rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+  tracking: -0.02em;
+}
+
+/* Style hero section job title sub-heading */
+.hero-title {
+  font-size: 1.35rem;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+
+/* Style hero intro narrative text width and line height */
+.hero-intro {
+  max-width: 650px;
+  margin: 0 auto 2.25rem;
+  color: var(--color-text);
+  font-size: 1.1rem;
+}
+
+/* Configure primary CTA call-to-action button styling */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Style primary blue button theme variant */
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #0f172a;
+}
+
+/* Add hover transition effects for primary button */
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+  color: #0f172a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.25);
+}
+
+/* Configure About Me section grid layout container */
+.about-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Style photo placeholder gray box with clear bounds */
+.photo-placeholder {
+  width: 220px;
+  height: 220px;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Style bio text narrative paragraph */
+.about-bio {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+/* Style about me highlight bullets list reset */
+.about-highlights {
+  list-style: none;
+}
+
+/* Add custom bullet markers and padding to about highlights */
+.about-highlights li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-primary);
+}
+
+/* Add pseudo-element bullet indicator for highlights */
+.about-highlights li::before {
+  content: "•";
+  color: var(--color-accent);
+  font-weight: bold;
+  font-size: 1.25rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+/* Configure skills category column layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Style skill card category container box */
+.skill-category {
+  background-color: var(--color-card);
+  padding: 1.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Style skill category header title */
+.category-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+/* Style individual skill item rows */
+.skill-item {
+  margin-bottom: 1rem;
+}
+
+/* Flexbox distribution for skill name and percent text */
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+/* Style background track bar for proficiency percentage */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #334155;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Style active progress fill bar element */
+.progress-fill {
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: 4px;
+}
+
+/* Configure projects section card grid distribution */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* Style project card container and border properties */
+.project-card {
+  background-color: var(--color-card);
+  padding: 1.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Add hover elevation transition for project cards */
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.15);
+}
+
+/* Style project card header title text */
+.project-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-primary);
+}
+
+/* Style project description text lines */
+.project-description {
+  color: var(--color-text);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+/* Configure project tech tag pills row wrapper */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Style individual tech tag pill elements */
+.tech-pill {
+  background-color: #0f172a;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+  border: 1px solid var(--color-border);
+}
+
+/* Flexbox container for project demo and repo links */
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Style project card text action links */
+.btn-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+/* Add hover state transition to project links */
+.btn-link:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/* Configure education timeline container layout */
+.education-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Style education item card container */
+.education-card {
+  background-color: var(--color-card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Style education degree title heading */
+.education-degree {
+  font-size: 1.2rem;
+  margin-bottom: 0.35rem;
+  color: var(--color-primary);
+}
+
+/* Style education institution name */
+.education-institution {
+  font-size: 1rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Style date range span element */
+.education-dates {
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+/* Style resume section background and download button */
+.resume-section {
+  background-color: var(--color-bg);
+}
+
+/* Style introductory text in resume section */
+.resume-intro {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+/* Style contact form container width and align */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--color-card);
+  padding: 2.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Style form field groups with bottom spacing */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+/* Style form label text elements */
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+/* Style form text inputs and textareas */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #0f172a;
+  color: var(--color-primary);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Add focus outline state to text inputs */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* Style form field validation error text */
+.error-msg {
+  display: block;
+  color: var(--color-error);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+  min-height: 1.2rem;
+}
+
+/* Style form submission feedback container */
+.form-feedback {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-align: center;
+  display: none;
+}
+
+/* Style success state form feedback box */
+.form-feedback.success {
+  display: block;
+  background-color: rgba(74, 222, 128, 0.1);
+  color: var(--color-success);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* Style error state form feedback box */
+.form-feedback.error {
+  display: block;
+  background-color: rgba(248, 113, 113, 0.1);
+  color: var(--color-error);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+/* Style footer layout background and text */
+.footer {
+  background-color: #090d16;
+  color: var(--color-text);
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Configure footer container flexbox content layout */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Style footer copyright text string */
+.copyright {
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+/* Configure social links row flexbox distribution */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Style social link item anchor elements */
+.social-link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+/* Add hover state transition to social link elements */
+.social-link:hover {
+  color: var(--color-accent);
+}
+
+/* Configure fade-in-on-scroll initial hidden state */
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Configure fade-in-on-scroll visible target state */
+.fade-in-element.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tablet responsive breakpoint media query at 768px */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+    position: static;
+    width: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+  }
+
+  .hero-name {
+    font-size: 3.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .about-grid {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Desktop responsive breakpoint media query at 1024px */
+@media (min-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  section {
+    padding: 5.5rem 0;
+  }
+}
