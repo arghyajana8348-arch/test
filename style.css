@@ -13,9 +13,9 @@
   --color-error: #f87171;
   --color-success: #4ade80;
   --color-white: #ffffff;
-  --font-heading: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-body: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-accent: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 }
 
 /* Reset default element spacing and set base stylesheet rules */
@@ -43,8 +43,8 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.01em;
 }
 
-code, pre, .font-mono {
-  font-family: var(--font-mono);
+.font-accent, em, cite {
+  font-family: var(--font-accent);
 }
 
 /* Establish container width constraint and automatic horizontal margin */
@@ -379,9 +379,10 @@ section {
 .tech-pill {
   background-color: #0f172a;
   color: var(--color-accent);
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
   font-weight: 600;
+  font-style: italic;
   padding: 0.25rem 0.65rem;
   border-radius: 50px;
   border: 1px solid var(--color-border);
